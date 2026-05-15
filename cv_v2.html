@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Julián Ochoa — Creative Director / Copywriter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f1ea;
+    --ink:#111111;
+    --muted:#6b6760;
+    --accent:#d93a1a;
+    --rule:#1a1a1a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Fraunces',Georgia,serif;-webkit-font-smoothing:antialiased}
+  body{padding:60px 56px;max-width:1100px;margin:0 auto;font-size:14px;line-height:1.55}
+
+  /* ——— TOP META BAR ——— */
+  .topbar{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    padding-bottom:14px;border-bottom:1px solid var(--rule);
+  }
+  .topbar .left span{margin-right:18px}
+  .topbar .right{text-align:right}
+
+  /* ——— MASTHEAD ——— */
+  .masthead{
+    display:grid;grid-template-columns:1fr auto;gap:40px;
+    align-items:end;padding:36px 0 28px;
+    border-bottom:3px solid var(--rule);
+  }
+  .name{
+    font-family:'Fraunces',serif;
+    font-weight:900;font-size:108px;line-height:.88;
+    letter-spacing:-.045em;
+  }
+  .name .ampersand{
+    color:var(--accent);font-style:italic;font-weight:400;
+  }
+  .role-block{
+    text-align:right;padding-bottom:8px;
+  }
+  .role-block .role{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+    margin-bottom:8px;
+  }
+  .role-block .tagline{
+    font-style:italic;font-size:18px;font-weight:300;
+    color:var(--muted);max-width:280px;line-height:1.35;
+  }
+
+  /* ——— SECTION FRAME ——— */
+  section{
+    display:grid;grid-template-columns:170px 1fr;gap:48px;
+    padding:32px 0;border-bottom:1px solid #d8d2c5;
+  }
+  section:last-of-type{border-bottom:none}
+  .section-label{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+    padding-top:6px;
+  }
+  .section-label .num{
+    display:block;font-family:'Fraunces',serif;font-style:italic;
+    font-weight:300;font-size:36px;color:var(--accent);
+    line-height:1;margin-bottom:8px;letter-spacing:-.02em;
+  }
+  .section-label .es{display:block;color:var(--ink)}
+  .section-label .en{display:block;color:var(--muted);margin-top:2px}
+
+  /* ——— ABOUT ——— */
+  .about p{
+    font-size:19px;line-height:1.45;font-weight:300;
+    max-width:620px;margin-bottom:14px;
+  }
+  .about p.en{
+    font-style:italic;color:var(--muted);font-size:16px;
+  }
+
+  /* ——— EXPERIENCE ——— */
+  .job{
+    display:grid;grid-template-columns:130px 1fr;gap:28px;
+    padding:18px 0;border-top:1px dashed #c9c2b3;
+  }
+  .job:first-child{border-top:none;padding-top:4px}
+  .job .when{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.1em;color:var(--muted);padding-top:6px;
+  }
+  .job .when .duration{display:block;color:var(--ink);margin-top:2px;font-size:9.5px}
+  .job .title{
+    font-size:22px;font-weight:600;letter-spacing:-.015em;
+    line-height:1.15;margin-bottom:2px;
+  }
+  .job .title .company{
+    font-style:italic;font-weight:300;color:var(--accent);
+  }
+  .job .position{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    margin-top:6px;
+  }
+  .job .position .en{color:#a59f93;margin-left:8px}
+
+  /* ——— SKILLS GRID ——— */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .skills-block h4{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:10px;
+  }
+  .skills-block ul{list-style:none}
+  .skills-block li{
+    font-size:16px;padding:6px 0;border-bottom:1px solid #e3ddce;
+    display:flex;justify-content:space-between;
+  }
+  .skills-block li:last-child{border-bottom:none}
+  .skills-block li span:last-child{
+    font-family:'JetBrains Mono',monospace;font-size:10px;
+    color:var(--muted);letter-spacing:.1em;
+  }
+
+  /* ——— CERTIFICATIONS ——— */
+  .certs{columns:2;column-gap:40px}
+  .certs .cert{
+    break-inside:avoid;padding:10px 0;
+    border-top:1px solid #d8d2c5;font-size:14px;
+  }
+  .certs .cert:first-child,.certs .cert:nth-child(4){border-top:none}
+  .certs .cert .label{
+    font-family:'JetBrains Mono',monospace;font-size:9px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+    display:block;margin-bottom:2px;
+  }
+
+  /* ——— EDUCATION ——— */
+  .edu{display:flex;justify-content:space-between;align-items:baseline}
+  .edu .school{font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .edu .field{font-style:italic;color:var(--muted);margin-top:4px}
+  .edu .years{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--muted);letter-spacing:.1em;
+  }
+
+  /* ——— FOOTER ——— */
+  .footer{
+    margin-top:40px;padding-top:18px;border-top:3px solid var(--rule);
+    display:flex;justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  }
+  .footer .stamp{color:var(--accent)}
+
+  @media print{
+    body{padding:40px;font-size:12px}
+    .name{font-size:88px}
+    .print-btn{display:none !important}
+  }
+
+  /* ——— AWARDS ——— */
+  .award-list{
+    list-style:none;
+    display:flex;flex-wrap:wrap;
+    gap:0;
+  }
+  .award-list li{
+    font-size:22px;font-weight:600;letter-spacing:-.015em;
+    line-height:1.2;padding:14px 22px 14px 0;
+    margin-right:22px;
+    border-right:1px solid #c9c2b3;
+    position:relative;
+  }
+  .award-list li:last-child{
+    border-right:none;margin-right:0;padding-right:0;
+  }
+  .award-list li::before{
+    content:"★";
+    color:var(--accent);
+    font-size:11px;
+    vertical-align:middle;
+    margin-right:8px;
+    position:relative;top:-3px;
+  }
+
+  /* ——— LINKS ——— */
+  a{
+    color:inherit;text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  a:hover{
+    color:var(--accent);
+    border-bottom-color:var(--accent);
+  }
+
+  /* ——— PRINT BUTTON ——— */
+  .print-btn{
+    position:fixed;bottom:28px;right:28px;
+    background:var(--ink);color:var(--paper);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+    padding:14px 20px;border:none;cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+    transition:background .2s ease, transform .2s ease;
+    z-index:100;
+  }
+  .print-btn:hover{
+    background:var(--accent);transform:translateY(-2px);
+  }
+  .print-btn::before{
+    content:"↓ ";margin-right:4px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- TOP META -->
+  <div class="topbar">
+    <div class="left">
+      <span>№ 001 — Curriculum Vitae</span>
+      <span>Edición 2026</span>
+    </div>
+    <div class="right">Bogotá · Colombia</div>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div>
+      <div class="name">Julián<br><span class="ampersand">&</span> Ochoa</div>
+    </div>
+    <div class="role-block">
+      <div class="role">Creative Director / Copywriter</div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="section-label">
+      <span class="num">01</span>
+      <span class="es">Bio</span>
+      <span class="en">Bio</span>
+    </div>
+    <div class="about">
+      <p>Soy Director Creativo y Copywriter con casi 10 años en publicidad. Actualmente trabajo en Leo, y previamente estuve en Sancho BBDO, Findasense y Young &amp; Rubicam. He trabajado con marcas como Davivienda, Bancolombia, Coca-Cola, Almacenes Éxito y Postobón, con reconocimientos en Cannes Lions, Effie Latam, London Awards y Festival El Dorado, entre otros.</p>
+      <p class="en">I'm a Creative Director and Copywriter with nearly 10 years in advertising. Currently at Leo, previously at Sancho BBDO, Findasense and Young &amp; Rubicam. I've worked with brands such as Davivienda, Bancolombia, Coca-Cola, Almacenes Éxito and Postobón, with recognitions at Cannes Lions, Effie Latam, London Awards and Festival El Dorado, among others.</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-label">
+      <span class="num">02</span>
+      <span class="es">Experiencia</span>
+      <span class="en">Experience</span>
+    </div>
+    <div class="experience">
+
+      <div class="job">
+        <div class="when">2025 — Presente<span class="duration">11 meses</span></div>
+        <div>
+          <div class="title">Director Creativo <span class="company">— Leo</span></div>
+          <div class="position">Bogotá, CO <span class="en">/ Creative Director</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2023 — 2024<span class="duration">11 meses</span></div>
+        <div>
+          <div class="title">Creative Tech Head <span class="company">— Sancho BBDO</span></div>
+          <div class="position">Bogotá, CO <span class="en">/ Creative Technology Lead</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2021 — 2024<span class="duration">3 años 8 meses</span></div>
+        <div>
+          <div class="title">Director Creativo <span class="company">— Sancho BBDO</span></div>
+          <div class="position">Bogotá, CO <span class="en">/ Creative Director</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2019 — 2021<span class="duration">1 año 3 meses</span></div>
+        <div>
+          <div class="title">Director Creativo Asociado <span class="company">— Sancho BBDO</span></div>
+          <div class="position">Bogotá, CO <span class="en">/ Associate Creative Director</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2017 — 2019<span class="duration">2 años 1 mes</span></div>
+        <div>
+          <div class="title">Copywriter <span class="company">— Sancho BBDO</span></div>
+          <div class="position">Bogotá, CO</div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2016 — 2017<span class="duration">1 año 1 mes</span></div>
+        <div>
+          <div class="title">Copywriter <span class="company">— Findasense</span></div>
+          <div class="position">Bogotá, CO</div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2016<span class="duration">11 meses</span></div>
+        <div>
+          <div class="title">Copywriter <span class="company">— Young &amp; Rubicam Colombia</span></div>
+          <div class="position">Bogotá, CO</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section>
+    <div class="section-label">
+      <span class="num">03</span>
+      <span class="es">Premios</span>
+      <span class="en">Awards</span>
+    </div>
+    <div class="awards">
+      <ul class="award-list">
+        <li>Cannes Lions</li>
+        <li>London Awards</li>
+        <li>WINA</li>
+        <li>Festival El Dorado</li>
+        <li>Young Lions</li>
+        <li>Effie Latam</li>
+        <li>Best Ads</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS + LANGUAGES -->
+  <section>
+    <div class="section-label">
+      <span class="num">04</span>
+      <span class="es">Aptitudes</span>
+      <span class="en">Skills</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skills-block">
+        <h4>Core</h4>
+        <ul>
+          <li><span>Copywriting</span><span>10+ yrs</span></li>
+          <li><span>Digital Copywriting</span><span>10+ yrs</span></li>
+          <li><span>Creative Direction</span><span>6+ yrs</span></li>
+          <li><span>Creative Technology</span><span>2+ yrs</span></li>
+          <li><span>Marketing</span><span>10+ yrs</span></li>
+        </ul>
+      </div>
+      <div class="skills-block">
+        <h4>Idiomas / Languages</h4>
+        <ul>
+          <li><span>Español</span><span>Nativo</span></li>
+          <li><span>Inglés</span><span>Bilingüe</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="section-label">
+      <span class="num">05</span>
+      <span class="es">Certificaciones</span>
+      <span class="en">Certifications</span>
+    </div>
+    <div class="certs">
+      <div class="cert">
+        <span class="label">IA / AI</span>
+        What Is Generative AI?
+      </div>
+      <div class="cert">
+        <span class="label">IA / AI</span>
+        Introduction to Artificial Intelligence
+      </div>
+      <div class="cert">
+        <span class="label">IA / AI</span>
+        Generative AI: The Evolution of Thoughtful Online Search
+      </div>
+      <div class="cert">
+        <span class="label">Tools</span>
+        Streamlining Your Work with Microsoft Bing Chat
+      </div>
+      <div class="cert">
+        <span class="label">Tools</span>
+        Microsoft 365 Copilot First Look
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-label">
+      <span class="num">06</span>
+      <span class="es">Educación</span>
+      <span class="en">Education</span>
+    </div>
+    <div>
+      <div class="edu">
+        <div>
+          <div class="school">Universidad Jorge Tadeo Lozano</div>
+          <div class="field">Publicidad <em>/ Advertising</em></div>
+        </div>
+        <div class="years">2010 — 2016</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="section-label">
+      <span class="num">07</span>
+      <span class="es">Contacto</span>
+      <span class="en">Contact</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skills-block">
+        <h4>Directo / Direct</h4>
+        <ul>
+          <li><span>Teléfono</span><span><a href="tel:+573194661110">+57 319 466 1110</a></span></li>
+          <li><span>Email</span><span><a href="mailto:julianf.ochoar@gmail.com">julianf.ochoar@gmail.com</a></span></li>
+        </ul>
+      </div>
+      <div class="skills-block">
+        <h4>Online</h4>
+        <ul>
+          <li><span>LinkedIn</span><span><a href="https://www.linkedin.com/in/julianochoa" target="_blank" rel="noopener">/in/julianochoa</a></span></li>
+          <li><span>Behance</span><span><a href="https://www.behance.net/Julianochoaramirez" target="_blank" rel="noopener">/Julianochoaramirez</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>Julián Ochoa · Creative Director</div>
+    <div class="stamp">★ Bogotá D.C. — 2026</div>
+  </div>
+
+  <!-- PRINT / DOWNLOAD PDF BUTTON -->
+  <button class="print-btn" onclick="window.print()">Descargar PDF</button>
+
+</body>
+</html>
