@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Julián Ochoa — Creative Director / Copywriter</title>
+<title>Julián Ochoa · Creative Director / Copywriter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   html,body{background:var(--paper);color:var(--ink);font-family:'Fraunces',Georgia,serif;-webkit-font-smoothing:antialiased}
   body{padding:60px 56px;max-width:1100px;margin:0 auto;font-size:14px;line-height:1.55}
 
-  /* ——— TOP META BAR ——— */
+  /* TOP META BAR */
   .topbar{
     display:flex;justify-content:space-between;align-items:flex-start;
     font-family:'JetBrains Mono',monospace;font-size:10.5px;
@@ -28,7 +28,7 @@
   .topbar .left span{margin-right:18px}
   .topbar .right{text-align:right}
 
-  /* ——— MASTHEAD ——— */
+  /* MASTHEAD */
   .masthead{
     display:grid;grid-template-columns:1fr auto;gap:40px;
     align-items:end;padding:36px 0 28px;
@@ -38,10 +38,9 @@
     font-family:'Fraunces',serif;
     font-weight:900;font-size:108px;line-height:.88;
     letter-spacing:-.045em;
+    display:flex;flex-direction:column;align-items:flex-start;
   }
-  .name .ampersand{
-    color:var(--accent);font-style:italic;font-weight:400;
-  }
+  .name .name-line{display:block}
   .role-block{
     text-align:right;padding-bottom:8px;
   }
@@ -50,12 +49,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
     margin-bottom:8px;
   }
-  .role-block .tagline{
-    font-style:italic;font-size:18px;font-weight:300;
-    color:var(--muted);max-width:280px;line-height:1.35;
-  }
 
-  /* ——— SECTION FRAME ——— */
+  /* SECTION FRAME */
   section{
     display:grid;grid-template-columns:170px 1fr;gap:48px;
     padding:32px 0;border-bottom:1px solid #d8d2c5;
@@ -74,96 +69,96 @@
   .section-label .es{display:block;color:var(--ink)}
   .section-label .en{display:block;color:var(--muted);margin-top:2px}
 
-  /* ——— ABOUT ——— */
+  /* ABOUT */
   .about p{
-    font-size:19px;line-height:1.45;font-weight:300;
-    max-width:620px;margin-bottom:14px;
+    font-size:18px;line-height:1.45;font-weight:300;
+    max-width:680px;margin-bottom:14px;
   }
   .about p.en{
-    font-style:italic;color:var(--muted);font-size:16px;
+    font-style:italic;color:var(--muted);font-size:15px;
   }
 
-  /* ——— EXPERIENCE ——— */
-  .job{
-    display:grid;grid-template-columns:130px 1fr;gap:28px;
+  /* EXPERIENCE */
+  .agency-block{
     padding:18px 0;border-top:1px dashed #c9c2b3;
   }
-  .job:first-child{border-top:none;padding-top:4px}
-  .job .when{
+  .agency-block:first-child{border-top:none;padding-top:4px}
+  .agency-header{
+    display:grid;grid-template-columns:130px 1fr;gap:28px;
+    margin-bottom:14px;
+  }
+  .agency-header .when{
     font-family:'JetBrains Mono',monospace;font-size:10.5px;
     letter-spacing:.1em;color:var(--muted);padding-top:6px;
   }
-  .job .when .duration{display:block;color:var(--ink);margin-top:2px;font-size:9.5px}
-  .job .title{
-    font-size:22px;font-weight:600;letter-spacing:-.015em;
-    line-height:1.15;margin-bottom:2px;
+  .agency-header .agency-name{
+    font-size:24px;font-weight:600;letter-spacing:-.015em;
+    line-height:1.15;
   }
-  .job .title .company{
+  .agency-header .agency-name .location{
+    font-style:italic;font-weight:300;color:var(--accent);
+    font-size:18px;
+  }
+
+  .role-entry{
+    display:grid;grid-template-columns:130px 1fr;gap:28px;
+    padding:10px 0 14px 0;
+    margin-left:0;
+  }
+  .role-entry .role-when{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.1em;color:var(--muted);padding-top:4px;
+  }
+  .role-entry .role-title{
+    font-size:16px;font-weight:600;letter-spacing:-.01em;
+    line-height:1.25;margin-bottom:6px;
+  }
+  .role-entry .role-title .account{
     font-style:italic;font-weight:300;color:var(--accent);
   }
-  .job .position{
+  .role-entry .role-desc{
+    font-size:14px;line-height:1.55;color:var(--ink);font-weight:300;
+    max-width:640px;
+  }
+  .role-entry .role-desc .projects-label{
+    font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+    margin-right:4px;
+  }
+
+  /* For single-role agencies (Leo, Findasense, Y&R) */
+  .agency-solo{
+    display:grid;grid-template-columns:130px 1fr;gap:28px;
+    padding:18px 0;border-top:1px dashed #c9c2b3;
+  }
+  .agency-solo:first-child{border-top:none;padding-top:4px}
+  .agency-solo .when{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.1em;color:var(--muted);padding-top:6px;
+  }
+  .agency-solo .title{
+    font-size:22px;font-weight:600;letter-spacing:-.015em;
+    line-height:1.15;margin-bottom:4px;
+  }
+  .agency-solo .title .company{
+    font-style:italic;font-weight:300;color:var(--accent);
+  }
+  .agency-solo .position{
     font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
-    margin-top:6px;
+    margin-top:4px;margin-bottom:10px;
   }
-  .job .position .en{color:#a59f93;margin-left:8px}
-
-  /* ——— SKILLS GRID ——— */
-  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-  .skills-block h4{
-    font-family:'JetBrains Mono',monospace;font-size:10.5px;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
-    margin-bottom:10px;
+  .agency-solo .desc{
+    font-size:14px;line-height:1.55;color:var(--ink);font-weight:300;
+    max-width:640px;margin-top:6px;
   }
-  .skills-block ul{list-style:none}
-  .skills-block li{
-    font-size:16px;padding:6px 0;border-bottom:1px solid #e3ddce;
-    display:flex;justify-content:space-between;
-  }
-  .skills-block li:last-child{border-bottom:none}
-  .skills-block li span:last-child{
-    font-family:'JetBrains Mono',monospace;font-size:10px;
-    color:var(--muted);letter-spacing:.1em;
-  }
-
-  /* ——— CERTIFICATIONS ——— */
-  .certs{columns:2;column-gap:40px}
-  .certs .cert{
-    break-inside:avoid;padding:10px 0;
-    border-top:1px solid #d8d2c5;font-size:14px;
-  }
-  .certs .cert:first-child,.certs .cert:nth-child(4){border-top:none}
-  .certs .cert .label{
-    font-family:'JetBrains Mono',monospace;font-size:9px;
-    letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
-    display:block;margin-bottom:2px;
-  }
-
-  /* ——— EDUCATION ——— */
-  .edu{display:flex;justify-content:space-between;align-items:baseline}
-  .edu .school{font-size:20px;font-weight:600;letter-spacing:-.01em}
-  .edu .field{font-style:italic;color:var(--muted);margin-top:4px}
-  .edu .years{
-    font-family:'JetBrains Mono',monospace;font-size:11px;
-    color:var(--muted);letter-spacing:.1em;
-  }
-
-  /* ——— FOOTER ——— */
-  .footer{
-    margin-top:40px;padding-top:18px;border-top:3px solid var(--rule);
-    display:flex;justify-content:space-between;
+  .agency-solo .desc .projects-label{
     font-family:'JetBrains Mono',monospace;font-size:10px;
     letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
-  }
-  .footer .stamp{color:var(--accent)}
-
-  @media print{
-    body{padding:40px;font-size:12px}
-    .name{font-size:88px}
-    .print-btn{display:none !important}
+    margin-right:4px;
   }
 
-  /* ——— AWARDS ——— */
+  /* AWARDS */
   .award-list{
     list-style:none;
     display:flex;flex-wrap:wrap;
@@ -188,7 +183,55 @@
     position:relative;top:-3px;
   }
 
-  /* ——— LINKS ——— */
+  /* SKILLS */
+  .skills-blocks{display:flex;flex-direction:column;gap:22px}
+  .skills-block-v3 h4{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:8px;
+  }
+  .skills-block-v3 p{
+    font-size:15px;line-height:1.5;font-weight:300;
+    max-width:680px;
+  }
+
+  /* CONTACT GRID (kept compatible) */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .skills-block h4{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:10px;
+  }
+  .skills-block ul{list-style:none}
+  .skills-block li{
+    font-size:15px;padding:6px 0;border-bottom:1px solid #e3ddce;
+    display:flex;justify-content:space-between;
+  }
+  .skills-block li:last-child{border-bottom:none}
+  .skills-block li span:last-child{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    color:var(--muted);letter-spacing:.08em;
+  }
+
+  /* EDUCATION */
+  .edu{display:flex;justify-content:space-between;align-items:baseline}
+  .edu .school{font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .edu .field{font-style:italic;color:var(--muted);margin-top:4px}
+  .edu .years{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--muted);letter-spacing:.1em;
+  }
+
+  /* FOOTER */
+  .footer{
+    margin-top:40px;padding-top:18px;border-top:3px solid var(--rule);
+    display:flex;justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  }
+  .footer .stamp{color:var(--accent)}
+
+  /* LINKS */
   a{
     color:inherit;text-decoration:none;
     border-bottom:1px solid transparent;
@@ -199,7 +242,7 @@
     border-bottom-color:var(--accent);
   }
 
-  /* ——— PRINT BUTTON ——— */
+  /* PRINT BUTTON */
   .print-btn{
     position:fixed;bottom:28px;right:28px;
     background:var(--ink);color:var(--paper);
@@ -216,6 +259,12 @@
   .print-btn::before{
     content:"↓ ";margin-right:4px;
   }
+
+  @media print{
+    body{padding:40px;font-size:12px}
+    .name{font-size:88px}
+    .print-btn{display:none !important}
+  }
 </style>
 </head>
 <body>
@@ -223,7 +272,7 @@
   <!-- TOP META -->
   <div class="topbar">
     <div class="left">
-      <span>№ 001 — Curriculum Vitae</span>
+      <span>№ 001 · Curriculum Vitae</span>
       <span>Edición 2026</span>
     </div>
     <div class="right">Bogotá · Colombia</div>
@@ -232,14 +281,17 @@
   <!-- MASTHEAD -->
   <header class="masthead">
     <div>
-      <div class="name">Julián<br><span class="ampersand">&</span> Ochoa</div>
+      <div class="name">
+        <span class="name-line">Julián</span>
+        <span class="name-line">Ochoa</span>
+      </div>
     </div>
     <div class="role-block">
       <div class="role">Creative Director / Copywriter</div>
     </div>
   </header>
 
-  <!-- ABOUT -->
+  <!-- 01 · BIO -->
   <section class="about-section">
     <div class="section-label">
       <span class="num">01</span>
@@ -247,12 +299,12 @@
       <span class="en">Bio</span>
     </div>
     <div class="about">
-      <p>Soy Director Creativo y Copywriter con casi 10 años en publicidad. Actualmente trabajo en Leo, y previamente estuve en Sancho BBDO, Findasense y Young &amp; Rubicam. He trabajado con marcas como Davivienda, Bancolombia, Coca-Cola, Almacenes Éxito y Postobón, con reconocimientos en Cannes Lions, Effie Latam, London Awards y Festival El Dorado, entre otros.</p>
-      <p class="en">I'm a Creative Director and Copywriter with nearly 10 years in advertising. Currently at Leo, previously at Sancho BBDO, Findasense and Young &amp; Rubicam. I've worked with brands such as Davivienda, Bancolombia, Coca-Cola, Almacenes Éxito and Postobón, with recognitions at Cannes Lions, Effie Latam, London Awards and Festival El Dorado, among others.</p>
+      <p>Director Creativo con cerca de 10 años trabajando en la construcción de marca para clientes en Colombia y la región. Ha liderado el desarrollo creativo de cuentas como Davivienda, Bancolombia, Almacenes Éxito, Postobón y Coca-Cola Company desde agencias como Leo, Sancho BBDO, Findasense y Young &amp; Rubicam. Reconocimientos en Cannes Lions, Effie Latam, London Awards y Festival El Dorado.</p>
+      <p class="en">Creative Director with nearly 10 years building brands for clients in Colombia and the region. Led creative development for accounts such as Davivienda, Bancolombia, Almacenes Éxito, Postobón and Coca-Cola Company at agencies including Leo, Sancho BBDO, Findasense and Young &amp; Rubicam. Recognitions at Cannes Lions, Effie Latam, London Awards and Festival El Dorado.</p>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- 02 · EXPERIENCIA -->
   <section>
     <div class="section-label">
       <span class="num">02</span>
@@ -261,58 +313,101 @@
     </div>
     <div class="experience">
 
-      <div class="job">
-        <div class="when">2025 — Presente<span class="duration">11 meses</span></div>
+      <!-- LEO -->
+      <div class="agency-solo">
+        <div class="when">2025 · Presente</div>
         <div>
-          <div class="title">Director Creativo <span class="company">— Leo</span></div>
-          <div class="position">Bogotá, CO <span class="en">/ Creative Director</span></div>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">2023 — 2024<span class="duration">11 meses</span></div>
-        <div>
-          <div class="title">Creative Tech Head <span class="company">— Sancho BBDO</span></div>
-          <div class="position">Bogotá, CO <span class="en">/ Creative Technology Lead</span></div>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">2021 — 2024<span class="duration">3 años 8 meses</span></div>
-        <div>
-          <div class="title">Director Creativo <span class="company">— Sancho BBDO</span></div>
-          <div class="position">Bogotá, CO <span class="en">/ Creative Director</span></div>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">2019 — 2021<span class="duration">1 año 3 meses</span></div>
-        <div>
-          <div class="title">Director Creativo Asociado <span class="company">— Sancho BBDO</span></div>
-          <div class="position">Bogotá, CO <span class="en">/ Associate Creative Director</span></div>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="when">2017 — 2019<span class="duration">2 años 1 mes</span></div>
-        <div>
-          <div class="title">Copywriter <span class="company">— Sancho BBDO</span></div>
+          <div class="title">Director Creativo <span class="company">· Leo</span></div>
           <div class="position">Bogotá, CO</div>
+          <div class="desc">
+            Director Creativo del Open Hub de Davivienda, a cargo de las marcas Davivienda y DaviPlata. Equipo +10 personas. Foco en campañas de notoriedad y lanzamientos.
+            <br><br>
+            <span class="projects-label">Algunos proyectos:</span>
+            <a href="https://www.behance.net/gallery/247796771/Gerardos-47th-Card-DaviPlata" target="_blank" rel="noopener">Gerardo's 47th Card / DaviPlata</a>.
+          </div>
         </div>
       </div>
 
-      <div class="job">
-        <div class="when">2016 — 2017<span class="duration">1 año 1 mes</span></div>
+      <!-- SANCHO BBDO (agrupado con sub-roles) -->
+      <div class="agency-block">
+        <div class="agency-header">
+          <div class="when">2017 · 2024</div>
+          <div class="agency-name">Sancho BBDO <span class="location">· Bogotá, CO</span></div>
+        </div>
+
+        <div class="role-entry">
+          <div class="role-when">2023 · 2024</div>
+          <div>
+            <div class="role-title">Director Creativo <span class="account">· Bancolombia</span></div>
+            <div class="role-desc">
+              Cuenta de Bancolombia. Equipo +10 personas. Liderazgo creativo para campañas masivas y lanzamientos de producto.
+              <br><br>
+              <span class="projects-label">Algunos proyectos:</span>
+              <a href="https://www.behance.net/gallery/234158779/BANCOLOMBIA-CLOSET-SALE" target="_blank" rel="noopener">Bancolombia Closet Sale</a>.
+            </div>
+          </div>
+        </div>
+
+        <div class="role-entry">
+          <div class="role-when">2023 · 2024</div>
+          <div>
+            <div class="role-title">Creative Tech Head</div>
+            <div class="role-desc">
+              Cargo transversal a la operación de la agencia, enfocado en la incorporación de herramientas de IA en el proceso creativo.
+            </div>
+          </div>
+        </div>
+
+        <div class="role-entry">
+          <div class="role-when">2019 · 2023</div>
+          <div>
+            <div class="role-title">Director Creativo / Associate Creative Director <span class="account">· Almacenes Éxito</span></div>
+            <div class="role-desc">
+              Equipo +7 personas. Campañas de marca y promocionales para Almacenes Éxito y Fundación Éxito.
+              <br><br>
+              <span class="projects-label">Algunos proyectos:</span>
+              <a href="https://www.behance.net/gallery/168418267/Game-Pay-Exito" target="_blank" rel="noopener">Game Pay</a>,
+              <a href="https://www.behance.net/gallery/128522709/Exito-En-Cada-Momento" target="_blank" rel="noopener">Éxito en cada momento</a>,
+              <a href="https://www.behance.net/gallery/100554209/Prouducts" target="_blank" rel="noopener">Prouducts</a>,
+              <a href="https://www.behance.net/gallery/93977925/Cronica-the-City-of-Disadvantage" target="_blank" rel="noopener">Crónica, la ciudad de la desventaja</a>.
+            </div>
+          </div>
+        </div>
+
+        <div class="role-entry">
+          <div class="role-when">2017 · 2019</div>
+          <div>
+            <div class="role-title">Copywriter <span class="account">· Postobón</span></div>
+            <div class="role-desc">
+              Hub digital dedicado a la cuenta.
+              <br><br>
+              <span class="projects-label">Algunos proyectos:</span>
+              <a href="https://www.behance.net/gallery/74747287/Our-Flavor-Has-No-Race-Postobon" target="_blank" rel="noopener">Our Flavor Has No Race</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINDASENSE -->
+      <div class="agency-solo">
+        <div class="when">2016 · 2017</div>
         <div>
-          <div class="title">Copywriter <span class="company">— Findasense</span></div>
+          <div class="title">Copywriter <span class="company">· Findasense</span></div>
           <div class="position">Bogotá, CO</div>
+          <div class="desc">
+            Copywriter para las redes sociales de Coca-Cola Company en Colombia, Ecuador y mercados de Centroamérica y Caribe (Coca-Cola, Sprite, Fanta, Quatro). Proyectos de nuevos negocios para DirecTV.
+            <br><br>
+            <span class="projects-label">Algunos proyectos:</span>
+            <a href="https://www.behance.net/gallery/98339013/SPRITE-Pre-Roll-Bands" target="_blank" rel="noopener">Sprite Pre-Roll Bands</a>.
+          </div>
         </div>
       </div>
 
-      <div class="job">
-        <div class="when">2016<span class="duration">11 meses</span></div>
+      <!-- YOUNG & RUBICAM -->
+      <div class="agency-solo">
+        <div class="when">2016</div>
         <div>
-          <div class="title">Copywriter <span class="company">— Young &amp; Rubicam Colombia</span></div>
+          <div class="title">Copywriter <span class="company">· Young &amp; Rubicam Colombia</span></div>
           <div class="position">Bogotá, CO</div>
         </div>
       </div>
@@ -320,7 +415,7 @@
     </div>
   </section>
 
-  <!-- AWARDS -->
+  <!-- 03 · PREMIOS -->
   <section>
     <div class="section-label">
       <span class="num">03</span>
@@ -330,79 +425,57 @@
     <div class="awards">
       <ul class="award-list">
         <li>Cannes Lions</li>
-        <li>London Awards</li>
-        <li>WINA</li>
-        <li>Festival El Dorado</li>
-        <li>Young Lions</li>
         <li>Effie Latam</li>
+        <li>Festival El Dorado</li>
+        <li>London Awards</li>
+        <li>Young Lions</li>
+        <li>WINA</li>
         <li>Best Ads</li>
       </ul>
     </div>
   </section>
 
-  <!-- SKILLS + LANGUAGES -->
+  <!-- 04 · APTITUDES -->
   <section>
     <div class="section-label">
       <span class="num">04</span>
       <span class="es">Aptitudes</span>
       <span class="en">Skills</span>
     </div>
-    <div class="skills-grid">
-      <div class="skills-block">
-        <h4>Core</h4>
-        <ul>
-          <li><span>Copywriting</span><span>10+ yrs</span></li>
-          <li><span>Digital Copywriting</span><span>10+ yrs</span></li>
-          <li><span>Creative Direction</span><span>6+ yrs</span></li>
-          <li><span>Creative Technology</span><span>2+ yrs</span></li>
-          <li><span>Marketing</span><span>10+ yrs</span></li>
-        </ul>
+    <div class="skills-blocks">
+
+      <div class="skills-block-v3">
+        <h4>Brand y comunicación</h4>
+        <p>Construcción de marca · Estrategia creativa · Desarrollo de campañas integrales · Brief y comms planning · Storytelling de marca</p>
       </div>
-      <div class="skills-block">
+
+      <div class="skills-block-v3">
+        <h4>Liderazgo y operación</h4>
+        <p>Liderazgo de equipos creativos · Presentación a cliente · Manejo de múltiples cuentas en paralelo</p>
+      </div>
+
+      <div class="skills-block-v3">
+        <h4>Categorías y mercados</h4>
+        <p>Financiera, retail, bebidas · Colombia, Ecuador, Centroamérica, Caribe · Comunicación digital y social</p>
+      </div>
+
+      <div class="skills-block-v3">
+        <h4>IA aplicada al proceso creativo</h4>
+        <p>Herramientas generativas · Prompting · Integración de LLMs en flujos de trabajo</p>
+      </div>
+
+      <div class="skills-block-v3">
         <h4>Idiomas / Languages</h4>
-        <ul>
-          <li><span>Español</span><span>Nativo</span></li>
-          <li><span>Inglés</span><span>Bilingüe</span></li>
-        </ul>
+        <p>Español (nativo) · Inglés (bilingüe)</p>
       </div>
+
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
+  <!-- 05 · EDUCACIÓN -->
   <section>
     <div class="section-label">
       <span class="num">05</span>
-      <span class="es">Certificaciones</span>
-      <span class="en">Certifications</span>
-    </div>
-    <div class="certs">
-      <div class="cert">
-        <span class="label">IA / AI</span>
-        What Is Generative AI?
-      </div>
-      <div class="cert">
-        <span class="label">IA / AI</span>
-        Introduction to Artificial Intelligence
-      </div>
-      <div class="cert">
-        <span class="label">IA / AI</span>
-        Generative AI: The Evolution of Thoughtful Online Search
-      </div>
-      <div class="cert">
-        <span class="label">Tools</span>
-        Streamlining Your Work with Microsoft Bing Chat
-      </div>
-      <div class="cert">
-        <span class="label">Tools</span>
-        Microsoft 365 Copilot First Look
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section>
-    <div class="section-label">
-      <span class="num">06</span>
       <span class="es">Educación</span>
       <span class="en">Education</span>
     </div>
@@ -412,15 +485,15 @@
           <div class="school">Universidad Jorge Tadeo Lozano</div>
           <div class="field">Publicidad <em>/ Advertising</em></div>
         </div>
-        <div class="years">2010 — 2016</div>
+        <div class="years">2010 · 2016</div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- 06 · CONTACTO -->
   <section>
     <div class="section-label">
-      <span class="num">07</span>
+      <span class="num">06</span>
       <span class="es">Contacto</span>
       <span class="en">Contact</span>
     </div>
@@ -445,7 +518,7 @@
   <!-- FOOTER -->
   <div class="footer">
     <div>Julián Ochoa · Creative Director</div>
-    <div class="stamp">★ Bogotá D.C. — 2026</div>
+    <div class="stamp">★ Bogotá D.C. · 2026</div>
   </div>
 
   <!-- PRINT / DOWNLOAD PDF BUTTON -->
